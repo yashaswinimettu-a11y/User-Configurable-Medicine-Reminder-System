@@ -13,8 +13,6 @@ u32 dt,mon,yr;
 s32 dy;
 volatile int flag0;
 volatile int flag1;
-//extern volatile int flag0=0;
-//extern volatile int flag1=0;
 int main()
 
 {
