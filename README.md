@@ -178,6 +178,16 @@ User-Configurable-Medicine-Reminder-System/
 * ✅ Reminder acknowledgment
 * 🔄 Continuous schedule monitoring
 
+## ⭐ Project Highlights
+
+- Designed and implemented a real-time medicine reminder system using the LPC2148 ARM7 microcontroller.
+- Implemented RTC-based time monitoring for scheduled medicine reminders.
+- Used a 4×4 matrix keypad for user configuration and input.
+- Implemented LCD interfacing for displaying time, configuration options and reminder messages.
+- Used external interrupts EINT0 and EINT1 for configuration and reminder acknowledgment.
+- Implemented buzzer control for automatic medicine alerts.
+- Developed the project using modular Embedded C source files for different peripherals.
+
 ## 📚 Concepts Demonstrated
 
 This project demonstrates the practical implementation of:
