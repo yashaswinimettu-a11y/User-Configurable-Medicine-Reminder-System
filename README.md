@@ -135,7 +135,6 @@ The project was implemented using an LPC2148 ARM7 development board along with t
 User-Configurable-Medicine-Reminder-System/
 │
 ├── main.c
-├── main1.c
 │
 ├── buzzer.c
 ├── buzzer.h
