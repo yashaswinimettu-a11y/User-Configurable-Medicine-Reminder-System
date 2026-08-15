@@ -47,20 +47,6 @@ int main()
                          flag0=0;
 
                 }
-/*               if(flag1)
-{
-   // delay_ms(50);   // debounce
-
-   // if(!(IO0PIN & (1<<3)))   // still pressed
-    //{
-        buzzer_off();
-        CmdLCD(0x01);
-      //  StrLCD("Medicine Taken");
-    //}
-
-    flag1 = 0;
-}*/	 
 check_medicine();
-//CmdLCD(CLEAR_LCD);
 		 }
 	 }
