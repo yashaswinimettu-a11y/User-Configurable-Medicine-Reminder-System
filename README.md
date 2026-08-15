@@ -1,114 +1,131 @@
 💊 User-Configurable Medicine Reminder System
 
-An Embedded C based medicine reminder system developed using the LPC2148 ARM7 microcontroller. The system allows users to configure medicine timings and provides an automatic alert when it is time to take the medicine.
+An **Embedded C based medicine reminder system** developed using the **LPC2148 ARM7 microcontroller**. The system allows users to configure medicine timings and provides an automatic alert when it is time to take the medicine.
 
-📌 About the Project
+## 📌 About the Project
 
 Remembering medicines at the right time can be difficult, especially when there are multiple schedules to follow.
 
 This project provides a simple embedded solution where the user can:
 
-Set and edit the RTC date and time
-Configure medicine timings
-View the current time on an LCD
-Receive an automatic buzzer alert at the scheduled time
-Acknowledge the reminder using a switch
+* ⏰ Set and edit the RTC date and time
+* 💊 Configure medicine timings
+* 📟 View the current time on an LCD
+* 🔔 Receive an automatic buzzer alert at the scheduled time
+* ✅ Acknowledge the reminder using a switch
 
 The system continuously monitors the configured timings and generates a reminder when the scheduled time is reached.
 
-🎯 Objectives
-Display the current date and time using an RTC.
-Allow users to configure medicine timings.
-Continuously monitor the configured schedules.
-Generate an automatic alert at the scheduled time.
-Allow the user to acknowledge the reminder.
-Continue monitoring for the next scheduled medicine.
-⚙️ How It Works
-1️⃣ Normal Operation
+## 🎯 Objectives
+
+* Display the current date and time using an RTC.
+* Allow users to configure medicine timings.
+* Continuously monitor the configured schedules.
+* Generate an automatic alert at the scheduled time.
+* Allow the user to acknowledge the reminder.
+* Continue monitoring for the next scheduled medicine.
+
+## ⚙️ How It Works
+
+### 1️⃣ Normal Operation
 
 The LCD continuously displays the current RTC date and time.
 
-2️⃣ Configure the System
+### 2️⃣ Configure the System
 
-The user presses Switch-1 to enter configuration mode.
+The user presses **Switch-1** to enter configuration mode.
 
-Using the 4×4 keypad, the user can:
+Using the **4×4 keypad**, the user can:
 
-Edit the RTC date and time.
-Configure medicine timings.
-3️⃣ Monitor Medicine Schedule
+* Edit the RTC date and time.
+* Configure medicine timings.
 
-After configuration, the controller continuously compares the current RTC time with the stored medicine timings.
+### 3️⃣ Monitor Medicine Schedule
 
-4️⃣ Medicine Reminder
+After configuration, the controller continuously compares the current RTC time with the configured medicine timings.
+
+### 4️⃣ Medicine Reminder
 
 When the current time matches a configured medicine time:
 
-LCD:
+**LCD displays:**
 
-Take Medicine Now
+> 💊 Take Medicine Now
 
-Buzzer:
-🔔 Generates an alert
+**Buzzer:** 🔔 Generates an alert
 
-5️⃣ Acknowledge Reminder
+### 5️⃣ Acknowledge Reminder
 
-The user presses Switch-2 after taking the medicine.
+The user presses **Switch-2** after taking the medicine.
 
 The system then:
 
-Stops the buzzer.
-Clears the reminder.
-Returns to normal monitoring.
+* Stops the buzzer.
+* Clears the reminder.
+* Returns to normal monitoring.
 
 If the user does not acknowledge the reminder within the configured timeout period, the buzzer automatically stops and the system continues monitoring.
 
-🧩 Hardware Used
-Component	Purpose
-LPC2148	Main controller
-16×2 LCD	Displays time, settings and alerts
-4×4 Matrix Keypad	User input and configuration
-RTC	Maintains current date and time
-Buzzer	Medicine reminder alert
-Switch-1	Enters configuration mode
-Switch-2	Acknowledges medicine reminder
-USB-UART / DB-9	Serial communication/programming
-💻 Software & Technologies
-Embedded C
-LPC2148 ARM7
-Keil IDE
-Flash Magic
-RTC
-External Interrupts
-GPIO
-LCD Interface
-Matrix Keypad Interface
-🔌 System Flow
-        ┌──────────────────┐
-        │     LPC2148      │
-        │   ARM7 MCU       │
-        └────────┬─────────┘
-                 │
-     ┌───────────┼────────────┐
-     │           │            │
-     ▼           ▼            ▼
-   LCD         RTC          Keypad
-     │           │            │
-     │           │            │
-     └───────────┼────────────┘
-                 │
-          Medicine Time?
-                 │
-              YES ▼
-             ┌────────┐
-             │ Buzzer │
-             └────┬───┘
-                  │
-             Switch-2
-                  │
-                  ▼
-          Reminder Cleared
-📂 Project Structure
+## 🧩 Hardware Used
+
+| Component             | Purpose                            |
+| --------------------- | ---------------------------------- |
+| **LPC2148**           | Main controller                    |
+| **16×2 LCD**          | Displays time, settings and alerts |
+| **4×4 Matrix Keypad** | User input and configuration       |
+| **RTC**               | Maintains current date and time    |
+| **Buzzer**            | Medicine reminder alert            |
+| **Switch-1**          | Enters configuration mode          |
+| **Switch-2**          | Acknowledges medicine reminder     |
+| **USB-UART / DB-9**   | Serial communication/programming   |
+
+## 💻 Software & Technologies
+
+* **Embedded C**
+* **LPC2148 ARM7**
+* **Keil IDE**
+* **Flash Magic**
+* **RTC Interfacing**
+* **External Interrupts**
+* **GPIO Programming**
+* **LCD Interfacing**
+* **4×4 Matrix Keypad Interfacing**
+
+## 🔌 System Flow
+
+```text
+                    ┌──────────────────┐
+                    │     LPC2148      │
+                    │      ARM7        │
+                    │   Microcontroller│
+                    └────────┬─────────┘
+                             │
+              ┌──────────────┼──────────────┐
+              │              │              │
+              ▼              ▼              ▼
+            LCD             RTC           Keypad
+              │              │              │
+              └──────────────┼──────────────┘
+                             │
+                             ▼
+                    Medicine Time Match?
+                             │
+                            YES
+                             │
+                             ▼
+                         ┌───────┐
+                         │ Buzzer│
+                         └───┬───┘
+                             │
+                         Switch-2
+                             │
+                             ▼
+                    Reminder Cleared
+```
+
+## 📂 Project Structure
+
+```text
 User-Configurable-Medicine-Reminder-System/
 │
 ├── main.c
@@ -142,45 +159,50 @@ User-Configurable-Medicine-Reminder-System/
 ├── mini_project.uvopt
 ├── mini_project.sct
 └── mini_project.hex
-🌟 Key Features
-⏰ Real-time clock display
-💊 User-configurable medicine timings
-🔢 Keypad-based input
-📟 LCD-based interface
-🔔 Automatic buzzer alert
-🔘 Interrupt-based switch control
-✅ Reminder acknowledgment
-🔄 Continuous schedule monitoring
-📚 Concepts Demonstrated
+```
 
-This project helped in implementing and understanding:
+## 🌟 Key Features
 
-ARM7 LPC2148 microcontroller
-Embedded C programming
-RTC interfacing
-LCD interfacing
-4×4 matrix keypad interfacing
-GPIO programming
-External interrupts (EINT0 & EINT1)
-Timer-based control
-Buzzer interfacing
-Modular embedded C programming
-🚀 Future Improvements
+* ⏰ Real-time clock display
+* 💊 User-configurable medicine timings
+* 🔢 Keypad-based input
+* 📟 LCD-based interface
+* 🔔 Automatic buzzer alert
+* 🔘 Interrupt-based switch control
+* ✅ Reminder acknowledgment
+* 🔄 Continuous schedule monitoring
+
+## 📚 Concepts Demonstrated
+
+This project demonstrates the practical implementation of:
+
+* ARM7 LPC2148 microcontroller
+* Embedded C programming
+* RTC interfacing
+* LCD interfacing
+* 4×4 matrix keypad interfacing
+* GPIO programming
+* External interrupts (**EINT0 & EINT1**)
+* Timer-based control
+* Buzzer interfacing
+* Modular Embedded C programming
+
+## 🚀 Future Improvements
 
 The system can be further enhanced by adding:
 
-EEPROM-based permanent storage of medicine schedules
-Medicine names along with timings
-Multiple medicine schedules
-Mobile/wireless notifications
-Battery backup
-Improved user interface
-👩‍💻 Project Type
+* EEPROM-based permanent storage of medicine schedules
+* Medicine names along with timings
+* Support for multiple medicine schedules
+* Mobile/wireless notifications
+* Battery backup
+* Improved user interface
 
-Mini Project | Embedded Systems
+## 👩‍💻 Project Information
 
-Domain: Embedded Systems / Microcontrollers
-
-Microcontroller: LPC2148 ARM7
-
-Programming Language: Embedded C
+**Project Type:** Mini Project
+**Domain:** Embedded Systems / Microcontrollers
+**Microcontroller:** LPC2148 ARM7
+**Programming Language:** Embedded C
+**Development Environment:** Keil IDE
+**Programming Tool:** Flash Magic
