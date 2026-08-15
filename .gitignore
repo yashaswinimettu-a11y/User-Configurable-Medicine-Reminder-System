@@ -1,0 +1,24 @@
+# Keil / ARM compiler generated files
+*.o
+*.d
+*.crf
+*.dep
+*.lnp
+*.lst
+*.map
+*.axf
+*.htm
+*.plg
+*.tra
+
+# Backup files
+*.bak
+*.old
+
+# Keil temporary/project-generated files
+*.iex
+*.uvguix.*
+
+# Build output
+Listings/
+Objects/
