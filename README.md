@@ -79,6 +79,12 @@ If the user does not acknowledge the reminder within the configured timeout peri
 | **Switch-2**          | Acknowledges medicine reminder     |
 | **USB-UART / DB-9**   | Serial communication/programming   |
 
+## 🔧 Hardware Setup
+
+The project was implemented using an LPC2148 ARM7 development board along with the required peripheral components.
+
+![Hardware Setup](images/ARMDevelopmentBoard.png)
+
 ## 💻 Software & Technologies
 
 * **Embedded C**
