@@ -9,10 +9,6 @@ u32 kpmLUT[4][4]={{'1','2','3','A'},
                                                                         {'4','5','6','B'},
                                                                         {'7','8','9','C'},
                                                                         {'*','0','#','D'}};
-/*u8 kpmLUT[4][4]={{'7','8','9','/'},^M
-                                                                        {'4','5','6','*'},^M
-                                                                        {'1','2','3','-'},^M
-                                                                        {'C','0','=','+'}};     */
 
 void InitKPM(void)
 {
@@ -77,13 +73,10 @@ u32 ReadNum(u8 max_digits)
 
         if(key >= '0' && key <= '9')
         {
-           //if(digit_count < max_digits)   // ? dynamic limit
-            //{
+          
                 CharLCD(key);
                 sum = (sum * 10) + (key - '0');
 				c++;
-//                digit_count++;
-            //}
         }
 
         else if(key == '*')
@@ -93,15 +86,11 @@ u32 ReadNum(u8 max_digits)
 
         else if(key == '#' && c)   // Backspace
         {
-            //if(digit_count > 0)
-            //{
                 sum = sum / 10;
-               // digit_count--;
 					c--;
                 CmdLCD(0x10);   // move left
                 CharLCD(' ');   // erase
                 CmdLCD(0x10);   // move left again
-            //}
         }
     }
     return sum;
