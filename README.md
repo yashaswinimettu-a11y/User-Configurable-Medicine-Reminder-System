@@ -134,42 +134,7 @@ The Proteus simulation circuit and connections for the project are shown below.
                     Reminder Cleared
 ```
 
-## 📂 Project Structure
 
-```text
-User-Configurable-Medicine-Reminder-System/
-│
-├── main.c
-│
-├── buzzer.c
-├── buzzer.h
-│
-├── delay.c
-├── delay.h
-│
-├── interrupt.c
-├── interrupt.h
-│
-├── keypad.c
-├── keypad.h
-├── kpm_defines.h
-│
-├── lcd.c
-├── lcd.h
-├── lcd_defines.h
-│
-├── rtc.c
-├── rtc.h
-│
-├── defines.h
-├── types.h
-├── Startup.s
-│
-├── mini_project.uvproj
-├── mini_project.uvopt
-├── mini_project.sct
-└── mini_project.hex
-```
 
 ## 🌟 Key Features
 
