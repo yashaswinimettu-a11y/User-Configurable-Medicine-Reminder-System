@@ -1,4 +1,4 @@
-💊 User-Configurable Medicine Reminder System
+## 💊 User-Configurable Medicine Reminder System
 
 An **Embedded C based medicine reminder system** developed using the **LPC2148 ARM7 microcontroller**. The system allows users to configure medicine timings and provides an automatic alert when it is time to take the medicine.
 
@@ -191,3 +191,9 @@ The system can be further enhanced by adding:
 **Programming Language:** Embedded C
 **Development Environment:** Keil IDE
 **Programming Tool:** Flash Magic
+
+## 👩‍💻 Author
+
+**Yashaswini Mettu**
+
+B.Tech – Electronics and Communication Engineering
